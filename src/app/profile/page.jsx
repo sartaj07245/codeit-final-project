@@ -10,7 +10,7 @@ const Profile = async () => {
   return (
     <div>
       <Image
-        src={"/zebra.jpg"}
+        src={profile.image}
         alt="Profile Image"
         width={500}
         height={500}
