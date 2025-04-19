@@ -8,6 +8,7 @@ export default function Home() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+ 
   const router = useRouter(); 
 
   const handleLoginChange = () => {
@@ -18,17 +19,18 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      fetch("https://fakestoreapi.com/auth/login", {
+      fetch("https://notifications.googleapis.com/email/redirect?t=AFG8qyXwaQ8SrKEeQSZ85a_w9GcKpHRUCTy2EqLag5eKykG2QL4KUdTIouJIM6hhYLHfOSfkeyHJ-lFfLHtz89RpImuqwDCyoeTml7zrK7ZG7fxaTZG6D6-jy5zTPZjI5g5KcW1Xs3X1E4XVCZUMsPvb_djpZIxrtrQ5mN4QGRmZR_Y6QvcxP5fnjhSw3fc0Kx4O6KxjXm60VydjVFCrz9QYuBf14vuHBzipz0lDg58sWzY2yDsQmehowE3sUXI4oYuAPc7bAZWMKxjC2rzt-Tdd3zOerXDC_d6ZlM_PLt2jguM0PIXVjqjXq_lKxqV_uwiKBbutzVbUQBDRADAIlZbaKdJ1&r=eJzLKCkpKLbS109LzE4tLskvSk0syNRLzs_VT8lPLlYuSUzXDy1OLSrWzy9ILUosyczP009MSQEJAQBwPxWm&s=ALHZ2r7tEdp7q-41EmXlEJpuP7gR", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username:johnd,
+          username:"johnd",
           password: "m38rmf$",
         }),
       })
         .then((res) => res.json())
         .then((res) => {
           if (res.token) {
+           
             router.replace("/products", {path: 'products'});
           }
         });
@@ -36,7 +38,6 @@ export default function Home() {
       console.log(error.message);
     }
   };
-
   return (
     <main className={styles.main}>
       <form className={styles.container} onSubmit={handleSubmit}>
