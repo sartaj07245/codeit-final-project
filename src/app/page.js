@@ -22,8 +22,8 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username: username,
-          password: "m38rmF$",
+          username:johnd,
+          password: "m38rmf$",
         }),
       })
         .then((res) => res.json())
